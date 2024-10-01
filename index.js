@@ -17,7 +17,8 @@ app.get('/products', (req, res) => {
     getRequestCount++;
     console.log('> /products GET: received request')
 
-    res.json(products); // Placeholder for response
+    // Retriving the list of all products as response to GET request
+    res.json(products); 
 
     console.log(`< /products GET: sending response`);
     console.log(`Processed request count -- GET: ${getRequestCount}, POST: ${postRequestCount}`);
