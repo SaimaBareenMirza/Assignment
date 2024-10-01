@@ -43,7 +43,13 @@ app.post('/products', (req, res) => {
 
 })
 
-// Logging request and response information for POST
+// HTTP Delete request
+app.delete('/products', (req,res) => {
+    products = [];
+    console.log('> products DELETE: All products deleted')
+    res.status(200).json({message: 'All products deleted'})
+})
+
 // Showing the server uri and endpoints information on start-up
 app.listen(port, () => {
     const baseUrl = `http://127.0.0.1:${port}`;
