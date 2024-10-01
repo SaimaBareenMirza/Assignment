@@ -7,15 +7,29 @@ app.use(express.json());
 // port number on which the application is running
 const port = 3000;
 
-
+// Initializing the request counters for GET and POST
+let getRequestCount = 0;
+let postRequestCount = 0;
 
 // Logging request and response information for GET
 app.get('/products', (req, res) => {
+    getRequestCount++;
     console.log('> /products GET: received request')
 
     res.send("hello"); // Placeholder for response
 
     console.log(`< /products GET: sending response`);
+    console.log(`Processed request count -- GET: ${getRequestCount}, POST: ${postRequestCount}`);
+})
+
+app.post('/products', (req, res) => {
+    postRequestCount++;
+    console.log('> /products POST: received request')
+
+    res.send("hello"); // Placeholder for response
+
+    console.log(`< /products POST: sending response`);
+    console.log(`Processed request count -- GET: ${getRequestCount}, POST: ${postRequestCount}`);
 })
 
 // Logging request and response information for POST
